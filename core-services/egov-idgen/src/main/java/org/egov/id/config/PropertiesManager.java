@@ -44,6 +44,8 @@ public class PropertiesManager {
 	private String serverContextpath;
 
 	private String timeZone;
+	
+	private String sequencePadding;
 
 	public String getInvalidInput() {
 		return environment.getProperty("invalid.input");
@@ -95,5 +97,9 @@ public class PropertiesManager {
 
     public String getTimeZone(){
 		return environment.getProperty("id.timezone");
+	}
+
+	public String getSequencePadding () {
+		return environment.getProperty("id.sequence.padding");
 	}
 }

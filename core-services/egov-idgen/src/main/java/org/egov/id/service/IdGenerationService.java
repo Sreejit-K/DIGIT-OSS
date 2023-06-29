@@ -61,6 +61,9 @@ public class IdGenerationService {
     public boolean autoCreateNewSeq;
 
 
+    @Value("${id.sequence.padding}")
+    public String paddingForTheSeq;
+    
     //default count value
     public Integer defaultCount = 1;
 
@@ -447,7 +450,7 @@ public class IdGenerationService {
             throw new CustomException("SEQ_NUMBER_ERROR","Error retrieving seq number from existing seq in DB");
         }
         for (String seqId : sequenceList) {
-            String seqNumber = String.format("%06d", Integer.parseInt(seqId)).toString();
+            String seqNumber = String.format("%0" + paddingForTheSeq + "d", Integer.parseInt(seqId)).toString();
             sequenceLists.add(seqNumber.toString());
         }
         return sequenceLists;

@@ -1,0 +1,1 @@
+INSERT INTO id_generator(idname, tenantid, format, sequencenumber) VALUES ('sunbird.rc.Pledge', 's.rc.Pledge', 'D[cy:yy][SEQ_D_SRC_NUM]', 1);
